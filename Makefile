@@ -42,7 +42,7 @@ install: META
           $$(ls yojson.mli yojson_biniou.mli \
 		yojson.cmi yojson_biniou.cmi \
 		$(CMO) $(CMX) $(CMXS) \
-		yojson.o yojson_biniou.o)
+		yojson.obj yojson_biniou.obj)
 
 uninstall:
 	test ! -f $(BINDIR)/ydump || rm $(BINDIR)/ydump
@@ -110,7 +110,7 @@ bench: bench.ml yojson.cmx META
 .PHONY: clean
 
 clean:
-	rm -f *.o *.a *.cm* *~ *.annot ydump ydump.exe \
+	rm -f *.obj *.lib *.cm* *~ *.annot ydump ydump.exe \
 		read.ml yojson.mli yojson.ml META
 	rm -rf doc
 	cd examples; $(MAKE) clean
